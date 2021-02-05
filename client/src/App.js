@@ -13,7 +13,7 @@ function App() {
       <PrimaryButton text="Login" type="button" />
       <PrimaryButton type="button" /> */}
       <PlaneGeometry/>
-      <Arithmetic/>
+      {/* <Arithmetic/> */}
     </>
   );
 }
