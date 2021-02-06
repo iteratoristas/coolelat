@@ -106,7 +106,7 @@ const data = [
           { "answer": "one right angle" }
         ],
         "explanation": "An equilateral triangle is a type of triangle where all three sides equal and all three angles equal."
-    }
+    },
 ]
 
 export default data;
