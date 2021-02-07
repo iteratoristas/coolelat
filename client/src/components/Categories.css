@@ -1,10 +1,205 @@
 /* Category styles */
-categories {
+.Page {
     position: absolute;
     width: 1920px;
     height: 38px;
-    left: 0px;
-    top: 0px;
 
     background: #ACEDF1;
+}
+
+.Coolelat {
+    position: absolute;
+    left: 126px;
+    top: 89px;
+    width: 450px;
+    height: 78px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 96px;
+    line-height: 144px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #ACEDF1;
+
+    text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Home {
+    position: absolute;
+    left: 1293px;
+    top: 97px;
+    width: 156px;
+    height: 70px;
+
+    background: #ACEDF1;
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.Categories {
+    position: absolute;
+    left: 1469px;
+    top: 97px;
+    width: 162px;
+    height: 70px;
+
+    background: #ACEDF1;
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.About {
+    position: absolute;
+    left: 1653px;
+    top: 97px;
+    width: 156px;
+    height: 70px;
+
+    background: #ACEDF1;
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+
+    color: #000000;
+}
+
+
+.Title {
+    position: absolute;
+    left: 753px;
+    top: 162px;
+    width: 417px;
+    height: 115px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 67px;
+    line-height: 100px;
+    text-align: center;
+
+    color: #544C4C;
+
+}
+
+.Arithmetic {
+    position: absolute;
+    left: 246px;
+    top: 323px;
+    width: 352px;
+    height: 351px;
+
+    background: #ACEDF1;
+    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39px;
+    line-height: 58px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.WordProblems {
+    position: absolute;
+    left: 808px;
+    top: 323px;
+    width: 352px;
+    height: 351px;
+
+    background: #ACEDF1;
+    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39px;
+    line-height: 58px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.Fractions {
+    position: absolute;
+    left: 1353px;
+    top: 323px;
+    width: 352px;
+    height: 351px;
+
+    background: #ACEDF1;
+    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39px;
+    line-height: 58px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.Geometry {
+    position: absolute;
+    left: 512px;
+    top: 706px;
+    width: 352px;
+    height: 351px;
+
+    background: #ACEDF1;
+    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39px;
+    line-height: 58px;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.Data {
+    position: absolute;
+    left: 1048px;
+    top: 706px;
+    width: 352px;
+    height: 351px;
+
+    background: #ACEDF1;
+    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39px;
+    line-height: 58px;
+    text-align: center;
+
+    color: #000000;
+
 }
