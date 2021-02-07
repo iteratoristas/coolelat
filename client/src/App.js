@@ -9,13 +9,14 @@ import Arithmetic from "./screens/Arithmetic";
 function App() {
   return (
     <>
-      <Categories />
-      {/*<AppBar />
-      <QuizCard/>
+      
+      <AppBar />
+     {/* <QuizCard/>
       <PrimaryButton text="Login" type="button" />
-      <PrimaryButton type="button" /> */}
+      <PrimaryButton type="button" /> 
       <PlaneGeometry/> 
        <Arithmetic/> 
+       <Categories />*/}
     </>
   );
 }

@@ -6,6 +6,7 @@ function PrimaryButton(props) {
     <button className="primary_btn" type={props.type}>
       <span className="primary_btn_text">{props.text}</span>
     </button>
+    
   );
 }
 
