@@ -1,7 +1,7 @@
 const inverse = [
     {
-        "question": "6 x __ = 12",
-        "answer": "2",
+        "question": "Share $48 among 8 adults ",
+        "answer": "6",
         "options": [
           { "answer": "6" },
           { "answer": "1" },
@@ -77,10 +77,10 @@ const inverse = [
       "explanation": "insert solution here"
     },
     {
-      "question": "18 x __ = 2",
-      "answer": "9",
+      "question": "How many weeks is 49 days?",
+      "answer": "7",
       "options": [
-        { "answer": "3" },
+        { "answer": "7" },
         { "answer": "6" },
         { "answer": "8" },
         { "answer": "9" }
@@ -99,7 +99,7 @@ const inverse = [
       "explanation": "insert solution here"
     },
     {
-      "question": "56 / __ = 8",
+      "question": "Tiffany has saved $56 by saving $8 per week. How many weeks did it take? ",
       "answer": "7",
       "options": [
         { "answer": "6" },
