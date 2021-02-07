@@ -88,7 +88,7 @@ const remainder = [
       "explanation": "insert solution here"
     },
     {
-      "question": "10.	19 apples are shared equally among five people. How many apples do they get each?",
+      "question": "19 apples are shared equally among five people. How many apples do they get each?",
       "answer": "3 4/5",
       "options": [
         { "answer": "3 4/5" },
