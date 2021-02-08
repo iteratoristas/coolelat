@@ -4,7 +4,7 @@ The educational website you never knew you needed
 
 ### Commit Message Guidelines
 
-This repsitory aims to be Commitizen-friendly to whch regard all commit messages *must* follow the [guide](https://www.npmjs.com/package/commitizen)
+This repository aims to be Commitizen-friendly to which regard all commit messages *must* follow the [guide](https://www.npmjs.com/package/commitizen)
 
 The steps needed to take within the context of this application are:
 
