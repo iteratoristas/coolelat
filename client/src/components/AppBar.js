@@ -6,6 +6,7 @@ export default function AppBar() {
     <header className="appbar">
       <h2 className="appbar_logo">Coolelat</h2>
       <nav className="appbar_nav">
+        <NavLink href="/" text="Home"/>
         <NavLink href="/" text="Categories"/>
         <NavLink href="/" text="About"/>
       </nav>

@@ -92,11 +92,13 @@ code {
 }
 
 /* Quiz Card */
-.img-container{
+.quiz_card_img{
   width: 400px;
-  
 }
 
+.quiz_card_img img{
+  height: 200px;
+}
 .quiz-icon{
   height: 200px;
 }
