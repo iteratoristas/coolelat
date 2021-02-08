@@ -201,5 +201,63 @@
     text-align: center;
 
     color: #000000;
+}
+
+/* Questions*/
+
+.Topic {
+    position: absolute;
+    left: -90px;
+    top: 260.30px;
+    width: 720px;
+    height: 109px;
+
+    background: rgba(84, 76, 76, 0.1);
+    border-radius: 29px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 54px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.Questions {
+    position: absolute;
+    top: 391.39px;
+    left: -90px;
+    width: 1105px;
+    height: 474px;
+
+    background: #FFFFFF;
+    border: 5px solid #ACEDF1;
+    box-sizing: border-box;
+    border-radius: 85px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 108px;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.a {
+
+}
+
+.b {
+
+}
+
+.c {
+
+}
+
+.d {
 
 }

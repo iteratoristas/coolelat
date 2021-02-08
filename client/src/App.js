@@ -4,7 +4,6 @@ import AppBar from "./components/AppBar";
 import QuizCard from "./components/QuizCard";
 import Categories from "./components/Categories";
 import PlaneGeometry from "./screens/PlaneGeometry";
-import Arithmetic from "./screens/Arithmetic";
 
 function App() {
   return (
@@ -15,8 +14,8 @@ function App() {
       <PrimaryButton text="Login" type="button" />
       <PrimaryButton type="button" /> 
       <PlaneGeometry/> 
-       <Arithmetic/> */}
-       <Categories />
+       <Arithmetic/> 
+       <Categories /> */}
     </>
   );
 }

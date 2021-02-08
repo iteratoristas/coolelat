@@ -1,5 +1,5 @@
 import React from "react";
-import "./Categories.css";
+import "./Index.css";
 
 export default function Categories () {
   return (
