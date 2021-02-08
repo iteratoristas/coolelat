@@ -12,10 +12,8 @@ function App() {
       <AppBar />
       {/*<QuizCard/>
       <PrimaryButton text="Login" type="button" />
-      <PrimaryButton type="button" /> 
+      <PrimaryButton type="button" /> */}
       <PlaneGeometry/> 
-       <Arithmetic/> */}
-       <Categories /> 
     </>
   );
 }
