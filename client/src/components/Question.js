@@ -34,8 +34,8 @@ export default function Question(props) {
             {options.map((option, index) => {
               return (
                 <div key={index} style={{ display: "flex" }}>
-                  <p>{String.fromCharCode(65 + index)}</p>
-                  <button value={option.answer} onClick={selectAnswer}>
+                  <p>{String.fromCharCode(65 + index)}.)</p>
+                  <button className="options" value={option.answer} onClick={selectAnswer}>
                     {option.answer}
                   </button>
                 </div>
