@@ -1,263 +1,115 @@
 /* Category styles */
-.Page {
-    position: absolute;
-    width: 1920px;
-    height: 38px;
-
-    background: #ACEDF1;
-}
-
-.Coolelat {
-    position: absolute;
-    left: 126px;
-    top: 89px;
-    width: 450px;
-    height: 78px;
-
-    font-style: normal;
-    font-weight: normal;
-    font-size: 96px;
-    line-height: 144px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #ACEDF1;
-
-    text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
-}
-
-.Home {
-    position: absolute;
-    left: 1293px;
-    top: 97px;
-    width: 156px;
-    height: 70px;
-
-    background: #ACEDF1;
-    border-radius: 10px;
-
-    font-style: normal;
-    font-weight: normal;
-    font-size: 28px;
-    line-height: 42px;
-    text-align: center;
-
-    color: #000000;
-}
-
-.Categories {
-    position: absolute;
-    left: 1469px;
-    top: 97px;
-    width: 162px;
-    height: 70px;
-
-    background: #ACEDF1;
-    border-radius: 10px;
-
-    font-style: normal;
-    font-weight: normal;
-    font-size: 28px;
-    line-height: 42px;
-    text-align: center;
-
-    color: #000000;
-}
-
-.About {
-    position: absolute;
-    left: 1653px;
-    top: 97px;
-    width: 156px;
-    height: 70px;
-
-    background: #ACEDF1;
-    border-radius: 10px;
-
-    font-style: normal;
-    font-weight: normal;
-    font-size: 28px;
-    line-height: 42px;
-    text-align: center;
-
-    color: #000000;
-}
-
 
 .Title {
     position: absolute;
-    left: 753px;
-    top: 162px;
-    width: 417px;
-    height: 115px;
+    width: 282px;
+    height: 73px;
+    left: 136px;
+    top: 183px;
 
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: bold;
-    font-size: 67px;
-    line-height: 100px;
-    text-align: center;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 59px;
 
-    color: #544C4C;
-
+    color: #000000;
 }
 
 .Arithmetic {
     position: absolute;
-    left: 246px;
-    top: 323px;
-    width: 352px;
-    height: 351px;
+    width: 199px;
+    height: 29px;
+    left: 136px;
+    top: 108px;
 
-    background: #ACEDF1;
-    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
-
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: bold;
-    font-size: 39px;
-    line-height: 58px;
-    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
 
     color: #000000;
 }
 
 .WordProblems {
     position: absolute;
-    left: 808px;
-    top: 323px;
-    width: 352px;
-    height: 351px;
+    left: 136px;
+    width: 199px;
+    height: 29px;
+    top: 163px;
 
-    background: #ACEDF1;
-    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
-
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: bold;
-    font-size: 39px;
-    line-height: 58px;
-    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
 
     color: #000000;
 }
 
 .Fractions {
     position: absolute;
-    left: 1353px;
-    top: 323px;
-    width: 352px;
-    height: 351px;
+    width: 199px;
+    height: 29px;
+    left: 136px;
+    top: 212px;
 
-    background: #ACEDF1;
-    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
-
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: bold;
-    font-size: 39px;
-    line-height: 58px;
-    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
 
     color: #000000;
-}
+    }
 
-.Geometry {
+.SolidGeometry {
     position: absolute;
-    left: 512px;
-    top: 706px;
-    width: 352px;
-    height: 351px;
+    width: 199px;
+    height: 29px;
+    left: 673px;
+    top: 111px;
 
-    background: #ACEDF1;
-    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
-
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: bold;
-    font-size: 39px;
-    line-height: 58px;
-    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
 
     color: #000000;
 
 }
+
+.PlaneGeometry {
+    position: absolute;
+    width: 199px;
+    height: 29px;
+    left: 673px;
+    top: 163px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
+    }
 
 .Data {
     position: absolute;
-    left: 1048px;
-    top: 706px;
-    width: 352px;
-    height: 351px;
+    width: 199px;
+    height: 29px;
+    left: 673px;
+    top: 215px;
 
-    background: #ACEDF1;
-    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
-
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: bold;
-    font-size: 39px;
-    line-height: 58px;
-    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
 
     color: #000000;
-}
+    }
 
-/* Questions*/
-
-.Topic {
-    position: absolute;
-    left: -90px;
-    top: 260.30px;
-    width: 720px;
-    height: 109px;
-
-    background: rgba(84, 76, 76, 0.1);
-    border-radius: 29px;
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 54px;
-    text-align: center;
-
-    color: #000000;
-}
-
-.Questions {
-    position: absolute;
-    top: 391.39px;
-    left: -90px;
-    width: 1105px;
-    height: 474px;
-
-    background: #FFFFFF;
-    border: 5px solid #ACEDF1;
-    box-sizing: border-box;
-    border-radius: 85px;
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 72px;
-    line-height: 108px;
-    text-align: center;
-
-    color: #000000;
-
-}
-
-.a {
-
-}
-
-.b {
-
-}
-
-.c {
-
-}
-
-.d {
-
-}
