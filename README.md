@@ -11,3 +11,4 @@ The steps needed to take within the context of this application are:
 1. Go to root of the repository
 2. Ensure update dependecies by running npm install
 3. Instead of `git commit` when committing, use `cz` or `git cz` 
+4. To use the cz commands in subfolders [ex. *client*, *server*], make sure to install cz locally through the `npm install -g commitizen`
