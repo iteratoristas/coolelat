@@ -1,20 +1,18 @@
 import "./App.css";
-import PrimaryButton from "./components/PrimaryButton";
 import AppBar from "./components/AppBar";
-import QuizCard from "./components/QuizCard";
-import Categories from "./components/Categories";
-import PlaneGeometry from "./screens/PlaneGeometry";
+import Category from "./screens/Category";
 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
-    <>
-      
+    <Router>
       <AppBar />
-      {/*<QuizCard/>
-      <PrimaryButton text="Login" type="button" />
-      <PrimaryButton type="button" /> */}
-      <PlaneGeometry/> 
-    </>
+      <Switch>
+        <Route exact path="/" component={() => <div>Home</div>} />
+        <Route exact path="/categories" component={Category} />
+        <Route exact path="/about" component={() => <div>About</div>} />
+      </Switch>
+    </Router>
   );
 }
 
