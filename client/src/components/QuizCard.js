@@ -5,15 +5,17 @@ export default function QuizCard() {
   return (
     <div className="quiz_card">
         <div className="quiz_card_img">
-            <img alt ='' src="https://pbs.twimg.com/media/EKTZQWRUcAE4tK0?format=jpg&name=small"/>
+            <img alt ='' src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/1200px-Square_-_black_simple.svg.png"/>
         </div>
         <div className="quiz_card_body">
-            <h3 className="quiz_card_header">Multiplication by 2</h3>
-            <div>
-                <p>Multiplication by two is composed of ten questions sure to help your child master multiplication.</p>
-                <PrimaryButton/>
-            </div>
+        <div className="quiz_card_header">
+          Multiplication by 1
         </div>
+          <div className="quiz_description">
+            Multiplication by two is composed of ten questions sure to help your child master multiplication.
+        </div>
+        <PrimaryButton/>
+      </div>
     </div>
   );
 }
