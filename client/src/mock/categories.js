@@ -1,7 +1,7 @@
 const data = [
-    { categoryName: "Arithmetic" },
-    { categoryName: "Plane Geometry" },
-    { categoryName: "Word Problems" },
+    { categoryName: "Arithmetic", link: "arithmetic" },
+    { categoryName: "Plane Geometry", link: "planegeometry"},
+    { categoryName: "Word Problems", link: "wordproblems" },
 ]
 
 export default data
