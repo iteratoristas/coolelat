@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function PrimaryButton(props) {
   return (
-    <button className="primary_btn" type={props.type}>
+    <button className="primary_btn" type={props.type} onClick={props.onClick}>
       <span className="primary_btn_text">{props.text}</span>
     </button>
     
@@ -13,11 +13,13 @@ function PrimaryButton(props) {
 PrimaryButton.defaultProps = {
   text: "Start Quiz",
   type: "button",
+  onClick: null
 };
 
 PrimaryButton.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["button", "submit"]),
+  onClick: PropTypes.func
 };
 
 export default PrimaryButton;
