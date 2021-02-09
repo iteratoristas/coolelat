@@ -12,6 +12,26 @@ function App() {
       <Switch>
         <Route exact path="/" component={() => <div>Home</div>} />
         <Route exact path="/categories" component={Category} />
+        <Route
+          exact
+          path="/categories/:category"
+          component={() => (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1",
+                gridTemplateRows: "auto-fit",
+                gap: "1rem",
+              }}
+            >
+              <QuizCard />
+              <QuizCard />
+              <QuizCard />
+              <QuizCard />
+              <QuizCard />
+            </div>
+          )}
+        />
         <Route exact path="/categories/:category/:subcategory" component={QuizPage} />
         <Route exact path="/about" component={() => <div>About</div>} />
       </Switch>
