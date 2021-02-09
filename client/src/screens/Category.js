@@ -15,6 +15,7 @@ export default function Category() {
                     <CategoryButton
                         key={index}
                         text={element.categoryName}
+                        link={element.link}
                         type="button"
                 />
                 )
