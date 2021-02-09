@@ -1,5 +1,5 @@
 import React from "react";
-import add from "../mock/arithmetic/addition";
+import add from "../mock/arithmetic/addition/addition";
 import Question from "../components/Question";
 
 

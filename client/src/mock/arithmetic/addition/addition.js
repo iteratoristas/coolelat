@@ -1,6 +1,6 @@
 const add = [
     {
-        "question": "Add 862 and 128",
+        "question": "Add 862 and 128.",
         "answer": "990",
         "options": [
           { "answer": "990" },
@@ -11,7 +11,7 @@ const add = [
         "explanation": "insert solution here"
     },
     {
-      "question": "Add 125 and 346",
+      "question": "Add 125 and 346.",
       "answer": "471",
       "options": [
         { "answer": "470" },
@@ -22,7 +22,7 @@ const add = [
       "explanation": "insert solution here"
     },
     {
-      "question": "Add 678 and 211",
+      "question": "Add 678 and 211.",
       "answer": "889",
       "options": [
         { "answer": "889" },
@@ -33,7 +33,7 @@ const add = [
       "explanation": "insert solution here"
     },
     {
-      "question": "Add 2517 and 6658",
+      "question": "Add 2517 and 6658.",
       "answer": "471",
       "options": [
         { "answer": "9176" },
@@ -44,7 +44,7 @@ const add = [
       "explanation": "insert solution here"
     },
     {
-      "question": "Add 3111 and 3651",
+      "question": "Add 3111 and 3651.",
       "answer": "6762",
       "options": [
         { "answer": "6772" },
@@ -55,7 +55,7 @@ const add = [
       "explanation": "insert solution here"
     },
     {
-      "question": "Add 8657 and 1195 ",
+      "question": "Add 8657 and 1195.",
       "answer": "9852",
       "options": [
         { "answer": "9851" },
@@ -66,7 +66,7 @@ const add = [
       "explanation": "insert solution here"
     },
     {
-      "question": "651 + 1001 + 2367 ",
+      "question": "651 + 1001 + 2367 = ?",
       "answer": "4019",
       "options": [
         { "answer": "4016" },
@@ -77,7 +77,7 @@ const add = [
       "explanation": "insert solution here"
     },
     {
-      "question": "2543 + 128 + 1258",
+      "question": "2543 + 128 + 1258 = ?",
       "answer": "3929",
       "options": [
         { "answer": "3938" },
@@ -88,7 +88,7 @@ const add = [
       "explanation": "insert solution here"
     },
     {
-      "question": "354 + 859 + 577 + 6541",
+      "question": "354 + 859 + 577 + 6541 = ?",
       "answer": "8311",
       "options": [
         { "answer": "8310" },
@@ -99,7 +99,7 @@ const add = [
       "explanation": "insert solution here"
     },
     {
-      "question": "584 + 1024 + 251 + 1694 + 5562",
+      "question": "584 + 1024 + 251 + 1694 + 5562 = ?",
       "answer": "9115",
       "options": [
         { "answer": "9115" },

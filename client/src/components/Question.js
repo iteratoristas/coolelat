@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Context } from "react";
 import PropTypes from "prop-types";
 
 export default function Question(props) {
@@ -9,7 +9,6 @@ export default function Question(props) {
 
   function selectAnswer(e) {
     const value = e.target.value;
-    e.target.style.background = "rgba(229, 233, 27, 0.24)";
 
     setSelectedAnswer(value);
     setShowRemark(true);
