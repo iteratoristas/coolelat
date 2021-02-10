@@ -35,6 +35,21 @@ pool.connect((error, client) => {
     );
   });
 
+  app.get("/categories/:name", (req, res) => {
+    const name = req.params.name.replace('-', ' ').split(' ').map((value) => value[0].toUpperCase() + value.substring(1))[0];
+
+    return client.query(
+      "SELECT * FROM categories INNER JOIN subcategories USING(category_id) WHERE name = $1", [name],
+      (error, result) => {
+        if (error) {
+          return res.status(500).json({ error: "Could not retrieve data." });
+        }
+
+        let results = getResult(result, 'subcategories', ['subcategory_id', 'subcategory'], 'category_id');
+        return res.status(200).json(results);
+      }
+    );
+  });
   app.get("/subcategories", (req, res) => {
     return client.query(
       "SELECT * FROM subcategories INNER JOIN quizzes USING(subcategory_id)",
