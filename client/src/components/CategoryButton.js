@@ -7,7 +7,7 @@ function CategoryButton(props) {
       className="category-button"
       type={props.type}
       onClick={(e) => {
-        window.location = `/categories/${props.link}`;
+        window.location = `${window.location.pathname}/${props.link}`;
       }}
     >
       <div className="cat-btn-text">{props.text}</div>
@@ -17,7 +17,9 @@ function CategoryButton(props) {
 
 CategoryButton.propTypes = {
   text: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["button", "submit"]),
+  onClick: PropTypes.func,
 };
 
 export default CategoryButton;
