@@ -102,12 +102,12 @@ const data = [
         "question": `Sean started his holiday on 23rd June.
         He finished his holiday on 17th July.
         How many days was that?`,
-        "answer": "all 3 sides equal",
+        "answer": "24 days",
         "options": [
-          { "answer": "only 2 equal sides" },
-          { "answer": "all 3 sides equal" },
-          { "answer": "no equal sides" },
-          { "answer": "one right angle" }
+          { "answer": "24 days" },
+          { "answer": "23 days" },
+          { "answer": "25 days" },
+          { "answer": "20 days" }
         ],
         "explanation": "An equilateral triangle is a type of triangle where all three sides equal and all three angles equal."
     }
