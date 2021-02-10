@@ -12,7 +12,7 @@ exports.seed = function(knex) {
         {quiz_id: 7, subcategory_id: 3, quiz_name: "Associative Multiplication"}, //associative
         {quiz_id: 8, subcategory_id: 4, quiz_name: "Subtraction 101"}, //subtraction
         {quiz_id: 9, subcategory_id: 7, quiz_name: "Getting Tricky with Time"}, //time
-        {quiz_id: 10, subcategory_id: 4, quiz_name: "Polygons 101"}, //planegeometry
+        {quiz_id: 10, subcategory_id: 6, quiz_name: "Polygons 101"}, //planegeometry
       ]);
     });
 };
