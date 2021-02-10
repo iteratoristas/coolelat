@@ -33,6 +33,20 @@ pool.connect((error, client) => {
     );
   });
 
+  app.get("/subcategories", (req, res) => {
+    return client.query(
+      "SELECT * FROM subcategories INNER JOIN quizzes USING(subcategory_id)",
+      (error, result) => {
+        if (error) {
+          return res.status(500).json({ error: "Could not retrieve data." });
+        }
+
+        let results = getResult(result, 'quizzes', ['quiz_id', 'quiz_name'], 'subcategory');
+        return res.status(200).json(results);
+      }
+    );
+  });
+
   app.listen(port, () => {
     console.log(`Server is listening on http://localhost:${port}`);
   });
