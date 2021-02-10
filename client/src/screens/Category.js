@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import CategoryButton from "../components/CategoryButton";
+import { useData } from "../DataProvider";
 
 export default function Category() {
   const [categories, setCategories] = useState([]);
+  const data = useData().categories;
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
-      .then((response) => response.json())
-      .then((data) => setCategories(data))
-      .catch((reason) => console.log(reason));
-  }, []);
+    if (data.length > 0) {
+      setCategories(data);
+    } else {
+      fetch("http://localhost:5000/categories")
+        .then((response) => response.json())
+        .then((data) => setCategories(data))
+        .catch((reason) => console.log(reason));
+    }
+  }, [data]);
 
   return (
     <>
