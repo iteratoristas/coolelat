@@ -1,10 +1,11 @@
-import express from "express";
-import pg from "pg";
-import dotenv from "dotenv";
+const express = require("express");
+const pg = require("pg");
+const getResult = require("./helper/getResult");
 
-dotenv.config();
+require("dotenv").config();
 
-const pool = new pg.Pool();
+const pool = new pg.Pool(JSON.parse(process.env.DB_CONNECTION_STRING));
+const port = process.env.PORT;
 const app = express();
 
 // Middleware
@@ -17,7 +18,20 @@ pool.connect((error, client) => {
     process.exit(1);
   }
 
-  app.get("/", (req, res) => {});
+  // Routes
+  app.get("/categories", (req, res) => {
+    return client.query(
+      "SELECT * FROM categories INNER JOIN subcategories USING(category_id) ORDER BY categories.name",
+      (error, result) => {
+        if (error) {
+          return res.status(500).json({ error: "Could not retrieve data." });
+        }
+
+        let results = getResult(result, 'subcategories', ['subcategory_id', 'subcategory'], 'category_id');
+        return res.status(200).json(results);
+      }
+    );
+  });
 
   app.listen(port, () => {
     console.log(`Server is listening on http://localhost:${port}`);
