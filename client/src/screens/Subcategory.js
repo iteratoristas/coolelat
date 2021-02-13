@@ -1,40 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CategoryButton from "../components/CategoryButton";
 import { useData } from "../DataProvider";
 
-export default function Subategory(props) {
-  const [subcategories, setSubcategories] = useState([]);
-  const data = useData().categories;
-
-  const path = props.location.pathname.split("/");
-  const location = path[path.length - 1];
-
-  useEffect(() => {
-    if (data.length > 0) {
-      setSubcategories(
-        data.filter(
-          (value) => value.name.toLowerCase() === location.replaceAll("-", " ")
-        )
-      );
-    } else {
-      fetch(`http://localhost:5000/categories/${location}`)
-        .then((response) => response.json())
-        .then((data) => setSubcategories(data))
-        .catch((reason) => console.log(reason));
-    }
-  }, [data, location]);
+export default function Subcategory() {
+  const data = useData();
 
   return (
     <>
       <div className="cat-title">
         <h1>Subcategories:</h1>
       </div>
-
-      {
-        subcategories[0]?.subcategories?.map((el, i) => (
-            <CategoryButton text={el.subcategory} link={el.subcategory}/>
-        ))
-      }
+      {data.loading && <div>Loading...</div>}
+      {data.error && <div>Error {data.error}</div>}
+      {!data.loading &&
+        !data.error &&
+        data.subcategories &&
+        data.subcategories.map((el, i) => (
+          <CategoryButton
+            key={i}
+            text={el.subcategory}
+            link={el.subcategory.toLowerCase()}
+          />
+        ))}
     </>
   );
 }
