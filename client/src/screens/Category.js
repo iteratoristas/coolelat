@@ -1,6 +1,6 @@
 import React from "react";
 import CategoryButton from "../components/CategoryButton";
-import { useData } from "../DataProvider";
+import { useData } from "../context/DataProvider";
 
 export default function Category() {
   const data = useData();
