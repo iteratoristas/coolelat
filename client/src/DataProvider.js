@@ -1,30 +1,29 @@
-import React, { useContext, useEffect, useState, createContext } from "react";
+import React, { useContext, createContext } from "react";
+import useFetch from "./useFetch";
 
 const DataContext = createContext({
-    categories: [],
-    subcategories: []
+  categories: [],
+  subcategories: [],
+  loading: true,
+  error: false,
 });
 
-export const useData = () =>  useContext(DataContext);
+export const useData = () => useContext(DataContext);
 
-export default function DataProvider({children}) {
+export default function DataProvider({ children }) {
+  const { data: categories, isPending, error } = useFetch("categories");
+  const { data: subcategories, isPending: loading, error: hasError } = useFetch("subcategories");
 
-    const [categories, setCategories] = useState([]);
-    const [subcategories, setSubcategories] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:5000/categories")
-        .then((response) => response.json())
-        .then((data) => setCategories(data))
-        .catch((reason) => console.log(reason));
-
-        fetch("http://localhost:5000/subcategories")
-        .then((response) => response.json())
-        .then((data) => setSubcategories(data))
-        .catch((reason) => console.log(reason));
-    }, []);
-
-  return <DataContext.Provider value={{categories, subcategories}}>
+  return (
+    <DataContext.Provider
+      value={{
+        categories,
+        subcategories,
+        loading: loading || isPending,
+        error: error || hasError,
+      }}
+    >
       {children}
-  </DataContext.Provider>;
+    </DataContext.Provider>
+  );
 }
