@@ -1,5 +1,5 @@
 import React, { useContext, createContext } from "react";
-import useFetch from "./useFetch";
+import useFetch from "../hooks/useFetch";
 
 const DataContext = createContext({
   categories: [],
