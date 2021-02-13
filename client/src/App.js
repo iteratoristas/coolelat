@@ -4,7 +4,7 @@ import Category from "./screens/Category";
 import Subcategory from "./screens/Subcategory";
 import QuizPage from "./screens/QuizPage";
 import QuizCard from "./components/QuizCard";
-import DataProvider from "./DataProvider";
+import DataProvider from "./context/DataProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
