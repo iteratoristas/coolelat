@@ -18,6 +18,7 @@ PrimaryButton.defaultProps = {
 
 PrimaryButton.propTypes = {
   text: PropTypes.string.isRequired,
+  link: PropTypes.string,
   type: PropTypes.oneOf(["button", "submit"]),
   onClick: PropTypes.func
 };
