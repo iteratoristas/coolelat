@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function PrimaryButton(props) {
+function PrimaryButton({type, text, link, onClick, ...rest}) {
   return (
-    <button className="primary_btn" type={props.type} onClick={props.onClick}>
-      <span className="primary_btn_text">{props.text}</span>
+    <button className="primary_btn" type={type} onClick={onClick} {...rest}>
+      <span className="primary_btn_text">{text}</span>
     </button>
     
   );
