@@ -1,6 +1,5 @@
 import React from "react";
-import "./HomeButton";
-import HomeButton from "./HomeButton";
+import PrimaryButton from "../components/PrimaryButton";
 
 export default function Home (){
     return (
@@ -10,7 +9,7 @@ export default function Home (){
                 quality math and science content for young learners 
                 ages 7 to 19</div>
             <div className="learn">Learn More</div>
-            <HomeButton/>
+            <PrimaryButton/>
         </div>
     )
 }
