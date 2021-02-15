@@ -64,6 +64,19 @@ pool.connect((error, client) => {
     );
   });
 
+  app.get("/quizzes", (req, res) => {
+    return client.query(
+      "SELECT * FROM subcategories INNER JOIN quizzes USING(subcategory_id)",
+      (error, result) => {
+        if (error) {
+          return res.status(500).json({  error: "Could not retrieve data."  });
+        }
+
+        return res.status(200).json(result.rows);
+      }
+    );
+  });
+
   app.get("/quiz/:id", (req, res) => {
     return client.query(
       "SELECT * FROM quizzes INNER JOIN questions USING(quiz_id) INNER JOIN question_options USING(question_id) WHERE quiz_id = $1",
