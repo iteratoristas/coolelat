@@ -15,7 +15,7 @@ export default function Question(props) {
   }
 
   function letterEquivalent() {
-    const index = options.find((element) => element.answer === answer);
+    const index = options.find((element) => element.option === answer);
     return String.fromCharCode(65 + options.indexOf(index));
   }
 
@@ -35,8 +35,8 @@ export default function Question(props) {
               return (
                 <div key={index} style={{ display: "flex"}}>
                   <p>{String.fromCharCode(65 + index)}.)</p>
-                  <button className="options" value={option.answer} onClick={selectAnswer} >
-                    {option.answer}
+                  <button className="options" value={option.option} onClick={selectAnswer} >
+                    {option.option}
                   </button>
                 </div>
               );
