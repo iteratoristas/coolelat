@@ -6,6 +6,9 @@ import QuizPage from "./screens/QuizPage";
 import QuizCard from "./components/QuizCard";
 import DataProvider from "./context/DataProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import AddAQuestion from "./screens/AddAQuestion";
+import Home from "./screens/Home";
+import SubcategoryQuizScreen from "./screens/SubcategoryQuizScreen";
 
 function App() {
   return (
@@ -15,31 +18,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={() => <div>Home</div>} />
           <Route exact path="/categories" component={Category} />
-          <Route
-            exact
-            path="/categories/:category"
-            component={Subcategory}
-          />
+          <Route exact path="/question" component={AddAQuestion} />
+          <Route exact path="/categories/:category" component={Subcategory} />
           <Route
             exact
             path="/categories/:category/:subcategory"
-            component={() => (
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1",
-                  gridTemplateRows: "auto-fit",
-                  gap: "1rem",
-                }}
-              >
-                <h1>Subcategory Problems:</h1>
-                <QuizCard />
-                <QuizCard />
-                <QuizCard />
-                <QuizCard />
-                <QuizCard />
-              </div>
-            )}
+            component={SubcategoryQuizScreen}
           />
           <Route
             exact
