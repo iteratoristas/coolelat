@@ -216,3 +216,37 @@ code {
   }
 
 }
+
+.tagline {
+  position: absolute;
+  width: 486px;
+  height: 136px;
+  left: 134px;
+  top: 228px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 59px;
+
+  color: #000000;
+}
+
+.mission {
+  position: absolute;
+  width: 348px;
+  height: 104px;
+  left: 134px;
+  top: 380px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  /* or 146% */
+
+
+  color: #000000;
+}
