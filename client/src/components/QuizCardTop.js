@@ -14,7 +14,7 @@ function QuizCardTop({quiz}) {
                 {quiz?.description ?? "Multiplication by two is composed of ten questions sure to help your child master multiplication."}
                 </p>
             </div>
-            <center><PrimaryButton onClick={(e) => window.location = link+ `quiz:${quiz.quiz_id}`}/></center>
+            <center><PrimaryButton onClick={(e) => window.location = link+ `/quiz:${quiz.quiz_id}`}/></center>
         </div>
     )
 }
