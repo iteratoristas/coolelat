@@ -1,5 +1,6 @@
 import "./App.css";
 import AppBar from "./components/AppBar";
+import Home from "./screens/Home";
 import Category from "./screens/Category";
 import Subcategory from "./screens/Subcategory";
 import QuizPage from "./screens/QuizPage";
@@ -10,10 +11,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <DataProvider>
-      <Router>
+      <Router> 
         <AppBar />
         <Switch>
-          <Route exact path="/" component={() => <div>Home</div>} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/categories" component={Category} />
           <Route
             exact
