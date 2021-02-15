@@ -1,7 +1,7 @@
 import React from "react";
 import PrimaryButton from "./PrimaryButton";
 
-export default function QuizCard() {
+export default function QuizCard({quiz}) {
   // make dynamic
   const link = window.location.pathname;
 
@@ -12,13 +12,13 @@ export default function QuizCard() {
         </div>
         <div className="quiz_card_body">
         <div className="quiz_card_header">
-          Multiplication by 2
+          {quiz?.quiz_name ?? "Multiplication by 2"}
         </div>
           <div className="quiz_description">
-            Multiplication by two is composed of ten questions sure to help your child master multiplication.
+            {quiz?.description ?? "Multiplication by two is composed of ten questions sure to help your child master multiplication."}
         </div>
         {/* make dynamic */}
-        <PrimaryButton onClick={(e) => window.location = link+ '/multiplication'}/>
+        <PrimaryButton onClick={(e) => window.location = link + `/quiz/:${quiz.quiz_id}`}/>
       </div>
     </div>
   );
