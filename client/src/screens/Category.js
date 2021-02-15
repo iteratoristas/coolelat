@@ -4,14 +4,14 @@ import { useData } from "../context/DataProvider";
 
 export default function Category() {
   const data = useData();
+  const categories = data.categories
 
   return (
     <>
       <div className="cat-title">
         <h1>Categories:</h1>
       </div>
-      {data.loading && <div>Loading...</div>}
-      {data.error && <div>Error {data.error}</div>}
+      <div className="category-names">
       {!data.loading &&
         !data.error &&
         data.categories &&
@@ -25,6 +25,10 @@ export default function Category() {
             />
           );
         })}
+      </div>
+      {data.loading && <div>Loading...</div>}
+      {data.error && <div>Error {data.error}</div>}
+     
     </>
   );
 }

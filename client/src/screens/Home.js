@@ -1,5 +1,6 @@
 import React from "react";
 import PrimaryButton from "../components/PrimaryButton";
+import physics from "../icons/physics.png";
 
 export default function Home (){
     return (
@@ -8,7 +9,7 @@ export default function Home (){
             <div className="mission">We are committed to providing 
                 quality math and science content for young learners 
                 ages 7 to 19</div>
-            <div className="learn">Learn More</div>
+            <div className="calculator"></div>
             <PrimaryButton/>
         </div>
     )
