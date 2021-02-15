@@ -8,7 +8,6 @@ import SubcatQuizzes from "./screens/SubcatQuizzes"
 import DataProvider from "./context/DataProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddAQuestion from "./screens/AddAQuestion";
-import SubcategoryQuizScreen from "./screens/SubcategoryQuizScreen";
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
           <Route
             exact
             path="/categories/:category/:subcategory"
-            component={SubcategoryQuizScreen}
+            component={SubcatQuizzes}
           />
           <Route
             exact
