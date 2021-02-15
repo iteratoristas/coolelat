@@ -4,6 +4,8 @@ import PrimaryButton from "./PrimaryButton";
 export default function QuizCard({quiz}) {
   // make dynamic
   const link = window.location.pathname;
+//   extract into helper fn
+const direction = quiz?.quiz_name.split(' ').map(value => value.toLowerCase()).join('-');
 
   return (
     <div className="quiz_card">
@@ -18,7 +20,7 @@ export default function QuizCard({quiz}) {
             {quiz?.description ?? "Multiplication by two is composed of ten questions sure to help your child master multiplication."}
         </div>
         {/* make dynamic */}
-        <PrimaryButton onClick={(e) => window.location = link + `/quiz/${quiz.quiz_id}`}/>
+        <PrimaryButton onClick={(e) => window.location = link + `/${direction}`}/>
       </div>
     </div>
   );
