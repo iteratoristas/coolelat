@@ -18,7 +18,7 @@ export default function QuizCard({quiz}) {
             {quiz?.description ?? "Multiplication by two is composed of ten questions sure to help your child master multiplication."}
         </div>
         {/* make dynamic */}
-        <PrimaryButton onClick={(e) => window.location = link + `/quiz/:${quiz.quiz_id}`}/>
+        <PrimaryButton onClick={(e) => window.location = link + `/quiz/${quiz.quiz_id}`}/>
       </div>
     </div>
   );
