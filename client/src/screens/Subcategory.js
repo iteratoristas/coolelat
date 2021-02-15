@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CategoryButton from "../components/CategoryButton";
+import QuizCardTop from "../components/QuizCardTop"
 import { useData } from "../DataProvider";
 
 export default function Subategory(props) {
@@ -27,14 +28,16 @@ export default function Subategory(props) {
   return (
     <>
       <div className="cat-title">
-        <h1>Subcategories:</h1>
+        <h1>Category name</h1>
+        <p>Short description abt the category</p>
       </div>
-
+      <div className="category-names">  
       {
         subcategories[0]?.subcategories?.map((el, i) => (
             <CategoryButton text={el.subcategory} link={el.subcategory}/>
         ))
       }
+      </div>
     </>
   );
 }

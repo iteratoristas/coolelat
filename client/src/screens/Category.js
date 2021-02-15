@@ -22,6 +22,7 @@ export default function Category() {
       <div className="cat-title">
         <h1>Categories:</h1>
       </div>
+      <div className="category-names">
       {categories.map((element, index) => {
         return (
           <CategoryButton
@@ -32,6 +33,7 @@ export default function Category() {
           />
         );
       })}
+      </div>
     </>
   );
 }
