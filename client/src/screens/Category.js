@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CategoryButton from "../components/CategoryButton";
-import { useData } from "../DataProvider";
+import { useData } from "../context/DataProvider";
 
 export default function Category() {
-  const [categories, setCategories] = useState([]);
-  const data = useData().categories;
-
-  useEffect(() => {
-    if (data.length > 0) {
-      setCategories(data);
-    } else {
-      fetch("http://localhost:5000/categories")
-        .then((response) => response.json())
-        .then((data) => setCategories(data))
-        .catch((reason) => console.log(reason));
-    }
-  }, [data]);
+  const data = useData();
+  const categories = data.categories
 
   return (
     <>
@@ -23,17 +12,23 @@ export default function Category() {
         <h1>Categories:</h1>
       </div>
       <div className="category-names">
-      {categories.map((element, index) => {
-        return (
-          <CategoryButton
-            key={index}
-            text={element.name}
-            link={element.name.toLowerCase().replaceAll(" ", "-")}
-            type="button"
-          />
-        );
-      })}
+      {!data.loading &&
+        !data.error &&
+        data.categories &&
+        data.categories.map((element, index) => {
+          return (
+            <CategoryButton
+              key={index}
+              text={element.name}
+              link={element.name.toLowerCase().replaceAll(" ", "-")}
+              type="button"
+            />
+          );
+        })}
       </div>
+      {data.loading && <div>Loading...</div>}
+      {data.error && <div>Error {data.error}</div>}
+     
     </>
   );
 }

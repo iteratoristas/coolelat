@@ -203,6 +203,11 @@ code {
 
 .qc-description{
   padding-left: 10px;
+  display: inline-block;
+}
+
+.quiz-box{
+  display: flex;
 }
 
 @media only screen and (max-width: 700px) {
@@ -230,7 +235,7 @@ code {
   margin: .2rem;
   outline: none;
   padding: .5rem 1.5rem;
-  width: 150px;
+  width: 120px;
  }
 
  .primary_btn_text {
@@ -303,6 +308,67 @@ code {
  .hamburger:checked ~ ul{
    left: 0;
  }
+
+ .quizcard-square{
+   width: 180px;
+   height: 180px;
+   font-size: 10px;
+ }
+ .qc-title{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  }
+
+  .qc-description{
+  padding-left: 10px;
+  padding-bottom: 20px;
   
+  }
+  
+}
+
+.tagline {
+  position: absolute;
+  width: 486px;
+  height: 136px;
+  left: 134px;
+  top: 228px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 59px;
+
+  color: #000000;
+}
+
+.mission {
+  position: absolute;
+  width: 348px;
+  height: 104px;
+  left: 134px;
+  top: 380px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  /* or 146% */
+
+
+  color: #000000;
+}
+
+.calculator {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  left: 650px;
+  top: 115px;
+
+  background: url(./icons/calculator.png);
 
 }
