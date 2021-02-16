@@ -1,6 +1,7 @@
 import "./App.css";
 import AppBar from "./components/AppBar";
 import Home from "./screens/Home";
+import About from "./screens/About";
 import Category from "./screens/Category";
 import Subcategory from "./screens/Subcategory";
 import QuizPage from "./screens/QuizPage";
@@ -29,7 +30,7 @@ function App() {
             path="/categories/:category/:subcategory/:quiz"
             component={QuizPage}
           />
-          <Route exact path="/about" component={() => <div>About</div>} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </Router>
     </DataProvider>

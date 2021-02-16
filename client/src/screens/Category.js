@@ -29,9 +29,6 @@ export default function Category(props) {
               );
             })}
           </div>
-          <div className="calculator2"></div>
-          <div className="evaluation"></div>
-          <div className="presentation"></div>
         </>
       }
     />
