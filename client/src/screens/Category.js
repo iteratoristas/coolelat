@@ -4,13 +4,14 @@ import Flow from "../components/Flow";
 import { useData } from "../context/DataProvider";
 import { parsePath } from "../helpers/pathFunctions";
 
-export default function Category() {
+export default function Category(props) {
   const data = useData();
 
   return (
     <Flow
       loading={data.loading}
       error={data.error}
+      props={props}
       component={
         <>
           <div className="cat-title">
