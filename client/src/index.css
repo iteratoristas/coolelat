@@ -362,13 +362,33 @@ code {
   color: #000000;
 }
 
+/* home-page icons */
+.physics {
+  position: absolute;
+  width: 468px;
+  height: 380px;
+  left: 805px;
+  top: 100px;
+
+  background: url(./icons/Physics.png);
+}
+
 .calculator {
   position: absolute;
-  width: 450px;
-  height: 450px;
-  left: 650px;
-  top: 115px;
+  width: 383px;
+  height: 336px;
+  left: 926px;
+  top: 321px;
 
-  background: url(./icons/calculator.png);
+  background: url(./icons/Calculator.png);
+}
 
+.globus {
+  position: absolute;
+  width: 412px;
+  height: 439px;
+  left: 686px;
+  top: 307px;
+
+  background: url(./icons/Globus.png);
 }

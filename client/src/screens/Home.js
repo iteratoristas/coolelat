@@ -1,6 +1,5 @@
 import React from "react";
 import PrimaryButton from "../components/PrimaryButton";
-import physics from "../icons/physics.png";
 
 export default function Home (){
     return (
@@ -12,7 +11,7 @@ export default function Home (){
             <div className="physics"></div>
             <div className="calculator"></div>
             <div className="globus"></div>
-            <PrimaryButton/>
+            <PrimaryButton text="Learn More" type="submit"/>
         </div>
     )
 }
