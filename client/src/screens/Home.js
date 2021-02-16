@@ -1,7 +1,14 @@
 import React from "react";
 import PrimaryButton from "../components/PrimaryButton";
+import { useHistory } from "react-router-dom";
 
 export default function Home (){
+    const history = useHistory();
+  
+    const handleRoute = () =>{ 
+        history.push("/about");
+    }
+
     return (
         <div className="Home">
             <div className="tagline">Help your kids unlock their potential</div>
@@ -11,7 +18,11 @@ export default function Home (){
             <div className="physics"></div>
             <div className="calculator"></div>
             <div className="globus"></div>
-            <PrimaryButton text="Learn More" type="submit"/>
+            <PrimaryButton 
+                text="Learn More" 
+                type="submit"
+                onClick={handleRoute}
+            />
         </div>
     )
 }
