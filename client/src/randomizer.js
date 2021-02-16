@@ -14,7 +14,6 @@ export default function randomizer(questions) {
 
     return shuffledQuestions.map((item) => {
         let question = item;
-        console.log(item)
         const shuffledOptions = shuffle(item.options);
 
         question.options = shuffledOptions;
