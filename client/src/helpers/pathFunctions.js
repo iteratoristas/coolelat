@@ -15,7 +15,11 @@ export function validatePath(props, {categories, subcategories}) {
             case 'subcategory':
                 return subcategories.map(value => value.subcategory).includes(unparsePath(params[value]))
             case 'quiz':
-                const quizzes = [...subcategories.map(value => value.quizzes).map(quiz => quiz.quiz_name)];
+                let quizzes = subcategories.filter(value => value.subcategory === unparsePath(params['subcategory']));
+                
+                if (quizzes.length === 0) return false;
+
+                quizzes = quizzes[0].quizzes.map(quiz => quiz.quiz_name);
                 return quizzes.includes(unparsePath(params[value]))
             default:
                 return false;
