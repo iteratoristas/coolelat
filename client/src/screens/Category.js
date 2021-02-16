@@ -1,34 +1,35 @@
 import React from "react";
 import CategoryButton from "../components/CategoryButton";
+import Flow from "../components/Flow";
 import { useData } from "../context/DataProvider";
+import { parsePath } from "../helpers/pathFunctions";
 
 export default function Category() {
   const data = useData();
-  const categories = data.categories
 
   return (
-    <>
-      <div className="cat-title">
-        <h1>Categories:</h1>
-      </div>
-      <div className="category-names">
-      {!data.loading &&
-        !data.error &&
-        data.categories &&
-        data.categories.map((element, index) => {
-          return (
-            <CategoryButton
-              key={index}
-              text={element.name}
-              link={element.name.toLowerCase().replaceAll(" ", "-")}
-              type="button"
-            />
-          );
-        })}
-      </div>
-      {data.loading && <div>Loading...</div>}
-      {data.error && <div>Error {data.error}</div>}
-     
-    </>
+    <Flow
+      loading={data.loading}
+      error={data.error}
+      component={
+        <>
+          <div className="cat-title">
+            <h1>Categories:</h1>
+          </div>
+          <div className="category-names">
+            {data.categories.map((element, index) => {
+              return (
+                <CategoryButton
+                  key={index}
+                  text={element.name}
+                  link={parsePath(element.name)}
+                  type="button"
+                />
+              );
+            })}
+          </div>
+        </>
+      }
+    />
   );
 }
