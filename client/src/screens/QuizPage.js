@@ -9,7 +9,7 @@ import { unparsePath } from "../helpers/pathFunctions";
 export default function QuizPage(props) {
   const data = useData();
   const quizName = unparsePath(props.match.params.quiz);
-  const quizzes = data.quizzes.filter((value) => value.quiz_name === quizName);
+  const quizzes = data.quizzes.filter((value) => value.quiz_name.toLowerCase() === quizName.toLowerCase());
 
   return (
     <Flow
