@@ -19,8 +19,8 @@ export function validatePath(props, {categories, subcategories}) {
                 
                 if (quizzes.length === 0) return false;
 
-                quizzes = quizzes[0].quizzes.map(quiz => quiz.quiz_name);
-                return quizzes.includes(unparsePath(params[value]))
+                quizzes = quizzes[0].quizzes.map(quiz => quiz.quiz_name.toLowerCase());
+                return quizzes.includes(unparsePath(params[value]).toLowerCase())
             default:
                 return false;
         }
