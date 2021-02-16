@@ -9,6 +9,7 @@ import SubcatQuizzes from "./screens/SubcatQuizzes"
 import DataProvider from "./context/DataProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //import AddAQuestion from "./screens/AddAQuestion";
+//import ScorePage from "./screens/ScorePage";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             component={QuizPage}
           />
           <Route exact path="/about" component={About} />
+          {/*<ScorePage /> */}
         </Switch>
       </Router>
     </DataProvider>

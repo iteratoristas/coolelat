@@ -6,6 +6,7 @@ export default function Question(props) {
 
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [showRemark, setShowRemark] = useState(false);
+  //const [score, setScore] = useState(0);
 
   function selectAnswer(e) {
     const value = e.target.value;
