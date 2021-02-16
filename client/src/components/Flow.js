@@ -17,7 +17,7 @@ export default function Flow({ loading, error, component, props, categories, sub
 
 Flow.propTypes = {
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.bool.isRequired,
+  error: PropTypes.bool,
   component: PropTypes.element,
   props: PropTypes.object,
   categories: PropTypes.array,
