@@ -7,7 +7,7 @@ import QuizPage from "./screens/QuizPage";
 import SubcatQuizzes from "./screens/SubcatQuizzes"
 import DataProvider from "./context/DataProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AddAQuestion from "./screens/AddAQuestion";
+//import AddAQuestion from "./screens/AddAQuestion";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/categories" component={Category} />
-          <Route exact path="/question" component={AddAQuestion} />
+          {/*<Route exact path="/question" component={AddAQuestion} /> */}
           <Route exact path="/categories/:category" component={Subcategory} />
           <Route
             exact
