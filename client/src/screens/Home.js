@@ -9,7 +9,9 @@ export default function Home (){
             <div className="mission">We are committed to providing 
                 quality math and science content for young learners 
                 ages 7 to 19</div>
+            <div className="physics"></div>
             <div className="calculator"></div>
+            <div className="globus"></div>
             <PrimaryButton/>
         </div>
     )
