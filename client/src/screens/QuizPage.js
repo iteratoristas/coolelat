@@ -5,11 +5,16 @@ import Question from "../components/Question";
 import randomizer from "../randomizer";
 import Flow from "../components/Flow";
 import { unparsePath } from "../helpers/pathFunctions";
+import { useHistory } from "react-router-dom";
 
 export default function QuizPage(props) {
   const data = useData();
   const quizName = unparsePath(props.match.params.quiz);
   const quizzes = data.quizzes.filter((value) => value.quiz_name.toLowerCase() === quizName.toLowerCase());
+  const history = useHistory();
+  const handleRoute = () =>{ 
+    history.push("/Score");
+  }
 
   return (
     <Flow
@@ -51,6 +56,7 @@ export default function QuizPage(props) {
               //   className="quiz-button"
               text="Submit"
               type="submit"
+              onClick={handleRoute}
             />
           </div>
         </>
