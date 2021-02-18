@@ -5,14 +5,14 @@ export default function Question(props) {
   const { index, question, image, answer, options, explanation } = props;
 
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [showRemark, setShowRemark] = useState(false);
+  //const [showRemark, setShowRemark] = useState(false);
   //const [score, setScore] = useState(0);
 
   function selectAnswer(e) {
     const value = e.target.value;
 
     setSelectedAnswer(value);
-    setShowRemark(true);
+    //setShowRemark(true);
   }
 
   function letterEquivalent() {
@@ -45,12 +45,12 @@ export default function Question(props) {
           </div>
         </div>
       </div>
-      {showRemark && (
+      {/*showRemark && (
         <div>
           {selectedAnswer === answer ? <p>Congratulations!</p> : <p>Uh-oh, you got the wrong answer :(</p>}
           {explanation ? explanation : <p>The correct answer is {letterEquivalent()} or "{answer}"</p>}
         </div>
-      )}
+          )} */}
     </div>
   );
 }
