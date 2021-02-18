@@ -100,7 +100,9 @@ code {
   margin: 0 5px;
 }
 
-
+.menu-bar{
+  display: none;
+}
 
 /* Quiz Card */
 .quiz_card_header{
@@ -274,25 +276,39 @@ code {
     position: relative;
   }
 
-  .nav-links{
-    top: 0;
-    position: fixed;
+  .nav-links {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100vh;
-    background-color: #006DB7;
+    top: 49px;
+    left: -110%;
+    opacity: 1;
     text-align: center;
-    padding-top: 150px;
-    padding-left: none;
-    clip-path: circle(1000px at 80% 10%);
-    -webkit-clip-path:circle(1000px at 85% -10%);
-    transition: all 1s ease-out;
-    display: none;
+    align-items: center;
+    margin: 0;
+    padding: 0%;
+    transition: all 0.5s ease;
   }
 
-  .nav-links.open{
-    clip-path: circle(1000px at 80% 10%);
-    -webkit-clip-path:circle(1000px at 85% -10%);
+  .nav-links.active{
+    background: #006DB7;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
   }
+
+  .menu-bar{
+    display: block;
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    cursor: pointer;
+  }
+
 
   .nav-links li{
     display: block;
@@ -303,11 +319,9 @@ code {
     color: #FEFEFE;
     text-transform: uppercase;
     font-weight: bold;
+    text-align: center;
   }
   
- .hamburger:checked ~ ul{
-   left: 0;
- }
 
  .quizcard-square{
    width: 180px;
@@ -316,6 +330,8 @@ code {
  }
  .qc-title{
   text-align: center;
+  font-size: 15px;
+  font-weight: 400;
   padding-top: 20px;
   padding-bottom: 10px;
   }
