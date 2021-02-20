@@ -408,3 +408,20 @@ code {
 
   background: url(./icons/Globus.png);
 }
+
+.home-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 5px 40px 30px 30px;
+
+  position: absolute;
+  width: 150px;
+  height: 10px;
+  left: 134px;
+  top: 533px;
+
+  background: #006DB7;
+  border-radius: 50px;
+}
+
