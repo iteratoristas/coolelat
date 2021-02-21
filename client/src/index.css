@@ -372,8 +372,6 @@ code {
   font-weight: 500;
   font-size: 24px;
   line-height: 35px;
-  /* or 146% */
-
 
   color: #000000;
 }
@@ -381,30 +379,30 @@ code {
 /* home-page icons */
 .physics {
   position: absolute;
-  width: 468px;
-  height: 380px;
+  width: 343px;
+  height: 320px;
   left: 805px;
-  top: 100px;
+  top: 90px;
 
   background: url(./icons/Physics.png);
 }
 
 .calculator {
   position: absolute;
-  width: 383px;
-  height: 336px;
+  width: 323px;
+  height: 280px;
   left: 926px;
-  top: 321px;
+  top: 280px;
 
   background: url(./icons/Calculator.png);
 }
 
 .globus {
   position: absolute;
-  width: 412px;
-  height: 439px;
-  left: 686px;
-  top: 307px;
+  width: 367px;
+  height: 390px;
+  left: 715px;
+  top: 250px;
 
   background: url(./icons/Globus.png);
 }
@@ -425,3 +423,60 @@ code {
   border-radius: 50px;
 }
 
+/* About Page */
+.about-footer {
+  position: absolute;
+  width: 1365px;
+  height: 250px;
+  top: 405px;
+
+  background: url(./icons/Footer.png);
+}
+
+.about-header {
+  position: absolute;
+  width: 486px;
+  height: 136px;
+  left: 600px;
+  top: 128px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 59px;
+
+  color: #000000; 
+}
+
+.about-desc {
+  position: absolute;
+  width: 500px;
+  height: 104px;
+  left: 455px;
+  top: 220px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+
+  color: #000000;
+}
+
+.about-desc2 {
+  position: absolute;
+  width: 500px;
+  height: 104px;
+  left: 455px;
+  top: 320px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+
+  color: #000000;
+}
