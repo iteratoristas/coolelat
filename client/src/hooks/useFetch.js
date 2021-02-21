@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useFetch = (endpoint) => {
   const [data, setData] = useState([]);
   const [isPending, setIsPending] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     /** this allows us to control the fetch */
