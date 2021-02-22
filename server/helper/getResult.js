@@ -5,7 +5,10 @@ function getNewObject(value, removeFromSchema, field, option) {
         delete object[removeFromSchema[index]];
     }
 
-    object[field] = [option];
+    if (option) {
+      object[field] = [option];
+
+    }
 
     return object;
 }
@@ -14,12 +17,12 @@ function getOption(value, removeFromSchema) {
     const option = {};
 
     for (let index = 0; index < removeFromSchema.length; index++) {
-      if (removeFromSchema[index] !== "id") {
+      if (removeFromSchema[index] !== "id" && removeFromSchema[index] !== "variable_id" && value[removeFromSchema[index]] !== null) {
         option[removeFromSchema[index]] = value[removeFromSchema[index]];
       }
     }
 
-    return option;
+    return JSON.stringify(option) !== JSON.stringify({}) ? option : null;
 }
 
 function getResult(result, field, removeFromSchema, determiner) {

@@ -66,13 +66,13 @@ pool.connect((error, client) => {
 
   app.get("/quizzes", (req, res) => {
     return client.query(
-      "SELECT * FROM subcategories INNER JOIN quizzes USING(subcategory_id) INNER JOIN questions USING(quiz_id) INNER JOIN question_options USING(question_id)",
+      "SELECT * FROM quizzes INNER JOIN subcategories USING(subcategory_id) INNER JOIN questions USING(quiz_id) LEFT JOIN question_options USING(question_id) LEFT JOIN formula_variables USING(question_id) ",
       (error, result) => {
         if (error) {
           return res.status(500).json({  error: "Could not retrieve data."  });
         }
 
-        let results = getResult(result, 'options', ['option', 'id'], 'question_id');
+        let results = getResult(result, 'options', ['option', 'id', 'variable', 'min', 'max', 'decimal'], 'question_id');
         return res.status(200).json(results);
       }
     );
@@ -80,14 +80,14 @@ pool.connect((error, client) => {
 
   app.get("/quiz/:id", (req, res) => {
     return client.query(
-      "SELECT * FROM quizzes INNER JOIN questions USING(quiz_id) INNER JOIN question_options USING(question_id) WHERE quiz_id = $1",
+      "SELECT * FROM quizzes INNER JOIN questions USING(quiz_id) LEFT JOIN question_options USING(question_id) LEFT JOIN formula_variables USING(question_id) WHERE quiz_id = $1",
       [req.params.id],
       (error, result) => {
         if (error) {
           return res.status(500).json({ error: "Could not retrieve data." });
         }
 
-        let results = getResult(result, 'options', ['option', 'id'], 'question_id');
+        let results = getResult(result, 'options', ['option', 'id', 'variable', 'min', 'max', 'decimal', 'variable_id'], 'question_id');
         return res.status(200).json(results);
       }
     );

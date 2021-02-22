@@ -10,6 +10,7 @@ export default function SubcatQuizzes(props) {
   const subcategory = unparsePath(props.match.params.subcategory);
   const quiz = data.quizzes
     .filter((value) => value.subcategory === subcategory)
+    .sort((a, b) => a.quiz_id - b.quiz_id)
     .filter(
       (value, index, array) => array[index + 1]?.quiz_name !== value?.quiz_name
     );

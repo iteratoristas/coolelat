@@ -1,6 +1,6 @@
 export const parsePath = (path) => path.trim().split(' ').map(fragment => fragment.toLowerCase()).join('-'); 
 
-export const unparsePath = (path) => path.trim().split('-').map(fragment => fragment[0].toUpperCase() + fragment.substring(1)).join(' ');  
+export const unparsePath = (path) => path.trim().length > 0 ? path.trim().split('-').map(fragment => fragment[0].toUpperCase() + fragment.substring(1)).join(' ') : '';  
 
 export function validatePath(props, {categories, subcategories}) {
     if (!props.match.params) return true;
