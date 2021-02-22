@@ -72,7 +72,7 @@ pool.connect((error, client) => {
           return res.status(500).json({  error: "Could not retrieve data."  });
         }
 
-        let results = getResult(result, 'options', ['option', 'id'], 'question_id');
+        let results = getResult(result, 'options', ['option', 'id', 'variable', 'min', 'max', 'decimal'], 'question_id');
         return res.status(200).json(results);
       }
     );
@@ -87,7 +87,7 @@ pool.connect((error, client) => {
           return res.status(500).json({ error: "Could not retrieve data." });
         }
 
-        let results = getResult(result, 'options', ['option', 'id'], 'question_id');
+        let results = getResult(result, 'options', ['option', 'id', 'variable', 'min', 'max', 'decimal', 'variable_id'], 'question_id');
         return res.status(200).json(results);
       }
     );
