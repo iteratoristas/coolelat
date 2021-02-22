@@ -99,7 +99,6 @@ export function calculator(string) {
                 while ((i + 1) < n && !isNaN(string.charAt(i + 1))) {
                     num += string.charAt(i + 1);
                     ++i;
-                    console.log(num)
                 }
 
                 numbers.push(num);
