@@ -341,10 +341,10 @@ code {
 
 .tagline {
   position: absolute;
-  width: 486px;
+  width: 586px;
   height: 136px;
   left: 134px;
-  top: 228px;
+  top: 328px;
 
   font-family: Montserrat;
   font-style: normal;
@@ -357,10 +357,10 @@ code {
 
 .mission {
   position: absolute;
-  width: 348px;
+  width: 448px;
   height: 104px;
   left: 134px;
-  top: 380px;
+  top: 519px;
 
   font-family: Montserrat;
   font-style: normal;
@@ -374,30 +374,30 @@ code {
 /* home-page icons */
 .physics {
   position: absolute;
-  width: 343px;
-  height: 320px;
-  left: 805px;
-  top: 90px;
+  width: 468px;
+  height: 380px;
+  left: 905px;
+  top: 225px;
 
   background: url(./icons/Physics.png);
 }
 
 .calculator {
   position: absolute;
-  width: 323px;
-  height: 280px;
-  left: 926px;
-  top: 280px;
+  width: 383px;
+  height: 336px;
+  left: 1006px;
+  top: 446px;
 
   background: url(./icons/Calculator.png);
 }
 
 .globus {
   position: absolute;
-  width: 367px;
-  height: 390px;
-  left: 715px;
-  top: 250px;
+  width: 412px;
+  height: 439px;
+  left: 786px;
+  top: 422px;
 
   background: url(./icons/Globus.png);
 }
@@ -409,10 +409,10 @@ code {
   padding: 5px 40px 30px 30px;
 
   position: absolute;
-  width: 150px;
+  width: 175px;
   height: 10px;
   left: 134px;
-  top: 533px;
+  top: 673px;
 
   background: #006DB7;
   border-radius: 50px;
