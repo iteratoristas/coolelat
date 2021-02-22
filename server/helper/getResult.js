@@ -17,7 +17,7 @@ function getOption(value, removeFromSchema) {
     const option = {};
 
     for (let index = 0; index < removeFromSchema.length; index++) {
-      if (removeFromSchema[index] !== "id" && value[removeFromSchema[index]]) {
+      if (removeFromSchema[index] !== "id" && removeFromSchema[index] !== "variable_id" && value[removeFromSchema[index]] !== null) {
         option[removeFromSchema[index]] = value[removeFromSchema[index]];
       }
     }
