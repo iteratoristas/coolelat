@@ -1,22 +1,23 @@
-import React, {useState} from "react";
+import React, { Component } from "react";
 import NavLink from "./NavLink";
 
-function AppBar(){
-  const [clicked, setState] = useState(false)
-  //state = { clicked: false }
+class AppBar extends Component {
+  state = { clicked: false }
   
-  let handleClick = () => {
-   setState({clicked:!clicked})
+  handleClick = () => {
+    this.setState({clicked:!this.state.clicked})
   }
+
+  render() {
     return (
       <>
         <nav className="appbar">
           <h2 className="appbar_logo">Coolelat</h2>
-          <div className="menu-bar" onClick={handleClick}>
-            <i className={clicked ? 'fa fa-times' : 'fa fa-bars'}></i>
+          <div className="menu-bar" onClick={this.handleClick}>
+            <i className={this.state.clicked ? 'fa fa-times' : 'fa fa-bars'}></i>
           </div>
 
-          <ul className={clicked ? 'nav-links active' : 'nav-links'}>
+          <ul className={this.state.clicked ? 'nav-links active' : 'nav-links'}>
             <li><NavLink href="/" text="Home" /></li>
             <li><NavLink href="/categories" text="Categories" /></li>
             <li><NavLink href="/about" text="About" /></li>
@@ -24,6 +25,7 @@ function AppBar(){
         </nav>
       </>
     )
+  }
 }
 
 export default AppBar
