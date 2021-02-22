@@ -18,11 +18,13 @@ export default function Home (){
             <div className="physics"></div>
             <div className="calculator"></div>
             <div className="globus"></div>
-            <PrimaryButton 
-                text="Learn More" 
-                type="submit"
-                onClick={handleRoute}
-            />
+            <div className="home-button">
+                <PrimaryButton 
+                    text="Learn More" 
+                    type="submit"
+                    onClick={handleRoute}
+                />
+            </div>
         </div>
     )
 }

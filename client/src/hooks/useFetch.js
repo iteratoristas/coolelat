@@ -26,7 +26,7 @@ const useFetch = (endpoint) => {
           setIsPending(false);
         //   setError(error.message);
         setError(true);
-        }
+        } 
       });
 
     /** this is to fix unmounted error if we switch pages while the fetch is still running */

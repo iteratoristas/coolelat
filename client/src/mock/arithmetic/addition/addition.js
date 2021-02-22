@@ -34,7 +34,7 @@ const add = [
     },
     {
       "question": "Add 2517 and 6658.",
-      "answer": "471",
+      "answer": "9175",
       "options": [
         { "answer": "9176" },
         { "answer": "9173" },

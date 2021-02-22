@@ -50,7 +50,7 @@ export default function Question(props) {
           {selectedAnswer === answer ? <p>Congratulations!</p> : <p>Uh-oh, you got the wrong answer :(</p>}
           {explanation ? explanation : <p>The correct answer is {letterEquivalent()} or "{answer}"</p>}
         </div>
-      )}
+          )} 
     </div>
   );
 }
