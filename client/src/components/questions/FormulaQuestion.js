@@ -31,5 +31,4 @@ export default function FormulaQuestion({ question, index }) {
 FormulaQuestion.propTypes = {
   index: PropTypes.number.isRequired,
   question: PropTypes.object.isRequired,
-  variables: PropTypes.array.isRequired,
 };
