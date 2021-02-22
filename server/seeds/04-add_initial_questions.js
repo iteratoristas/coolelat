@@ -616,7 +616,8 @@ exports.seed = function (knex) {
           question_id: 101,
           quiz_id: 10,
           question: "What is the perimeter of a square with a side length of [length]",
-          type: "FQ"
+          type: "FQ",
+          answer: "[length] * 4"
         },
       ]);
     });
