@@ -345,12 +345,12 @@ code {
   width: 586px;
   height: 136px;
   left: 134px;
-  top: 328px;
+  top: 228px;
 
   font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 59px;
   line-height: 59px;
 
   color: #000000;
@@ -361,12 +361,12 @@ code {
   width: 448px;
   height: 104px;
   left: 134px;
-  top: 519px;
+  top: 419px;
 
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 34px;
   line-height: 35px;
 
   color: #000000;
@@ -413,7 +413,7 @@ code {
   width: 175px;
   height: 10px;
   left: 134px;
-  top: 673px;
+  top: 573px;
 
   background: #006DB7;
   border-radius: 50px;
