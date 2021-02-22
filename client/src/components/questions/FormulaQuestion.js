@@ -6,12 +6,16 @@ import {calculator} from '../../calculator';
 export default function FormulaQuestion({ question, index }) {
   const [correctAnswer, setCorrectAnswer] = useState(0); // can be used to check state
   const [answer, setAnswer] = useState(0);
-  const {answer: formula, string: formattedQuestion} = formatQuestionAndAnswer(question);
+  const [formula, setFormula] = useState("");
+  const [formattedQuestion, setFormattedQuestion] = useState("");
   // const regex = new RegExp(/\[[a-z]+\]/gi);
 
   useEffect(() => {
-    setCorrectAnswer(() => calculator(formula));
-  }, [formula])
+    const {answer: formula, string: formattedQuestion} = formatQuestionAndAnswer(question);
+    setFormattedQuestion(formattedQuestion);
+    setFormula(formula);
+    setCorrectAnswer(calculator(formula));
+  }, [question]);
 
   return (
     <div className="question">
