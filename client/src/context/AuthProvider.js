@@ -15,8 +15,10 @@ export default function AuthProvider({ children }) {
     if (token) {
       fetch("http://localhost:5000/verify", {
         method: "POST",
-        body: JSON.stringify({token}),
-        headers: {"Content-Type":  "application/json; charset=UTF-8"},
+        headers: {
+          "Content-Type":  "application/json; charset=UTF-8",
+          "Authorization": "Bearer " + token
+        },
         signal: abortController.signal
       })
         .then((res) => res.json())
