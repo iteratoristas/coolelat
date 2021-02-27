@@ -3,7 +3,7 @@ import { useAuthContext } from "../../context/AuthProvider";
 import PrimaryButton from "../../components/PrimaryButton";
 import Alert from "react-bootstrap/Alert";
 import { Link } from "react-router-dom";
-import calculator from '../../icons/Calculator.png';
+import calculator from "../../icons/Calculator.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -48,7 +48,8 @@ export default function Login() {
   return (
     <div className="form-container">
       <form className="login-form" method="POST" onSubmit={login}>
-        <img src={calculator} alt=""/>
+        <h1>Login</h1>
+        <img src={calculator} alt="" />
         <div className="input-field">
           <label htmlFor="email">Email:</label>
           <input
@@ -81,7 +82,7 @@ export default function Login() {
         </div>
         {showAlert && (
           <Alert
-          style={{width: "70%", marginTop: "1rem"}}
+            style={{ width: "70%", marginTop: "1rem" }}
             variant="danger"
             dismissible
             onClose={() => setShowAlert(false)}
