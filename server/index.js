@@ -66,7 +66,7 @@ pool.connect((error, client) => {
 
   });
 
-  app.get("/login", (req, res) => {
+  app.post("/login", (req, res) => {
     const {email, password} = req.body;
 
     return client.query('SELECT * FROM users WHERE email = $1', [email], (error, result) => {
