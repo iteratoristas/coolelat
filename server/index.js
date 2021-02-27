@@ -174,7 +174,21 @@ pool.connect((error, client) => {
     );
   });
 
-
+    // TEACHER ROUTES
+    app.get("/teacher/quizzes/", (req, res) => {
+      const bearer = req.headers.authorization;
+      const token = bearer?.slice('Bearer '.length); 
+  
+      if (!token) return errorObject(res, 403, "Insufficient permissions.")
+      const payload = jwt.decode(token);
+      const userId = payload.user_id;
+      return client.query('SELECT * FROM quizzes WHERE author = $1', [userId], (error, quizzes) => {
+        if (error) return errorObject(res);
+  
+        return res.status(200).json({success: true, quizzes: quizzes.rows});
+      })
+    })
+  
   app.listen(port, () => {
     console.log(`Server is listening on http://localhost:${port}`);
   });
