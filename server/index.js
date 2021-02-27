@@ -56,7 +56,7 @@ pool.connect((error, client) => {
               const user = formatPayload(result.rows[0]);
               return jwt.sign(user, process.env.SECRET_KEY, {expiresIn: '15m'}, (error, token) => {
                 if (error) return errorObject(res);
-                return res.status(200).json({success: true, token });
+                return res.status(200).json({success: true, token, user });
               });
             }
           );
@@ -81,7 +81,7 @@ pool.connect((error, client) => {
         const user = formatPayload(result.rows[0]);
         return jwt.sign(user, process.env.SECRET_KEY, {expiresIn: '3h'}, (jwtError, token) => {
           if (jwtError) return errorObject(res);
-          return res.status(200).json({success: true, token });
+          return res.status(200).json({success: true, token, user });
         });
       });
     });
