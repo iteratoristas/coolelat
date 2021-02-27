@@ -1,7 +1,12 @@
 const express = require("express");
 const pg = require("pg");
 const cors = require("cors");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
 const getResult = require("./helper/getResult");
+const validation = require("./helper/validation");
+const formatPayload = require("./helper/formatPayload");
 
 require("dotenv").config();
 
@@ -14,6 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({origin: "http://localhost:3000"}));
 
+const errorObject = (res, code = 500, message = "Something went wrong") => res.status(code).json({ success: false, message });
+
 pool.connect((error, client) => {
   if (error) {
     console.log("Could not connect to database.");
@@ -21,6 +28,68 @@ pool.connect((error, client) => {
   }
 
   // Routes
+  app.post("/signup", (req, res) => {
+    const { firstName, lastName, email, password, type } = req.body;
+
+    // server side validation
+    if (validation.isInvalid(firstName) ||validation.isInvalid(lastName) || validation.isInvalid(email) || validation.isInvalidType(type) || validation.isInvalidPassword(password)) {
+      return errorObject(res, 400, "Invalid input");
+    }
+
+    // hash password
+    return bcrypt.hash(password, Number(process.env.SALT), (hashError, hashedPassword) => {
+      if (hashError) return errorObject(res);
+
+      // check for email duplicates in database
+      return client.query(
+        'SELECT email FROM users WHERE email = $1',
+        [email],
+        (error, duplicate) => {
+          if (error || duplicate.rows.length !== 0) return errorObject(res, 409, "Email in use.");
+
+          return client.query(
+            'INSERT INTO users VALUES (DEFAULT, $1, $2, $3, $4, $5) RETURNING *',
+            [firstName, lastName, email, hashedPassword, type],
+            (dbError, result) => {
+              if (dbError) return errorObject(res);
+
+              const user = formatPayload(result.rows[0]);
+              return jwt.sign(user, process.env.SECRET_KEY, {expiresIn: '15m'}, (error, token) => {
+                if (error) return errorObject(res);
+                return res.status(200).json({success: true, token });
+              });
+            }
+          );
+        },
+      );
+    });
+
+  });
+
+  // boilerplate
+  app.get("/login", (req, res) => {
+    const {email, password} = req.body;
+
+    // hash password
+    const hashedPassword = password + 'CHANGE';
+
+    client.query('SELECT * FROM users WHERE email = $1 AND password = $1', [email, hashedPassword], (error, result) => {
+      if (error) {
+        return res.status(500).json({"error": "Something went wrong"});
+      }
+
+      if (result.rows.length === 1) {
+        // tokenize
+        return res.status(200).json({"token": "JWT_TOKEN"})
+      }
+
+      // no results
+      return res.status(401).json({"error": ""})
+
+    })
+
+  })
+
   app.get("/categories", (req, res) => {
     return client.query(
       "SELECT * FROM categories INNER JOIN subcategories USING(category_id) ORDER BY categories.name",
