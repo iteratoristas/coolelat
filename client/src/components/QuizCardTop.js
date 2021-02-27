@@ -1,7 +1,7 @@
 import React from "react"
 import PrimaryButton from "./PrimaryButton"
 
-function QuizCardTop({quiz}) {
+function QuizCardTop({quiz, text, path}) {
     // useHistory
   const link = window.location.pathname;
 //   extract into helper fn
@@ -17,7 +17,7 @@ function QuizCardTop({quiz}) {
                 {quiz?.description ?? "Multiplication by two is composed of ten questions sure to help your child master multiplication."}
                 </p>
             </div>
-            <center><PrimaryButton onClick={(e) => window.location = link+ `/${direction}`}/></center>
+            <center><PrimaryButton text={text} onClick={(e) => window.location = link+ `/${direction}`}/></center>
         </div>
     )
 }
