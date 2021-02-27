@@ -29,8 +29,10 @@ pool.connect((error, client) => {
 
   // Routes
 
+  // AUTH
   app.post("/verify", (req, res) => {
-    const { token } = req.body;
+    const bearer = req.headers.authorization;
+    const token = bearer?.slice('Bearer '.length); 
 
     try {
       const user = jwt.verify(token, process.env.SECRET_KEY);
@@ -99,6 +101,7 @@ pool.connect((error, client) => {
     });
   });
 
+  // CATEGORIES
   app.get("/categories", (req, res) => {
     return client.query(
       "SELECT * FROM categories INNER JOIN subcategories USING(category_id) ORDER BY categories.name",
@@ -170,6 +173,7 @@ pool.connect((error, client) => {
       }
     );
   });
+
 
   app.listen(port, () => {
     console.log(`Server is listening on http://localhost:${port}`);
