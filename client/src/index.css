@@ -458,7 +458,7 @@ code {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 4.1rem);
+  min-height: calc(100vh - 4.1rem);
 }
 
 .login-form {
