@@ -70,25 +70,24 @@ pool.connect((error, client) => {
   app.get("/login", (req, res) => {
     const {email, password} = req.body;
 
-    // hash password
-    const hashedPassword = password + 'CHANGE';
+    return client.query('SELECT * FROM users WHERE email = $1', [email], (error, result) => {
+      if (error) return errorObject(res);
+      if (result.rows.length === 0) return errorObject(res, 401, "No user found");
 
-    client.query('SELECT * FROM users WHERE email = $1 AND password = $1', [email, hashedPassword], (error, result) => {
-      if (error) {
-        return res.status(500).json({"error": "Something went wrong"});
-      }
+      const hashedPassword = result.rows[0]['password'];
+      console.log(typeof(password), typeof(hashedPassword));
+      return bcrypt.compare(password.toString(), hashedPassword, (compareError, same) => {
+        if (compareError || !same) return errorObject(res, 401, "No user found");
 
-      if (result.rows.length === 1) {
-        // tokenize
-        return res.status(200).json({"token": "JWT_TOKEN"})
-      }
-
-      // no results
-      return res.status(401).json({"error": ""})
-
-    })
-
-  })
+        // TODO: extract repetitive code in signup
+        const user = formatPayload(result.rows);
+        return jwt.sign(user, process.env.SECRET_KEY, {expiresIn: '3h'}, (jwtError, token) => {
+          if (jwtError) return errorObject(res);
+          return res.status(200).json({success: true, token });
+        });
+      });
+    });
+  });
 
   app.get("/categories", (req, res) => {
     return client.query(
