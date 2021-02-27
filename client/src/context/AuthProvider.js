@@ -1,17 +1,43 @@
-import React, { useContext, createContext, useState } from "react";
+import React, { useContext, createContext, useState, useEffect } from "react";
 
-const AuthContext = createContext({
-  authenticated: false,
-  setAuthenticated: () => {},
-  user: {},
-  setUser: () => {}
-});
+const AuthContext = createContext();
 
 export const useAuthContext = () => useContext(AuthContext);
 
 export default function AuthProvider({ children }) {
-    const [authenticated, setAuthenticated] = useState(false);
-    const [user, setUser] = useState({});
+  const [authenticated, setAuthenticated] = useState(false);
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const abortController = new AbortController();
+    const token = localStorage.getItem("coolelat_token");
+
+    if (token) {
+      fetch("http://localhost:5000/verify", {
+        method: "POST",
+        body: JSON.stringify({token}),
+        headers: {"Content-Type":  "application/json; charset=UTF-8"},
+        signal: abortController.signal
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            setAuthenticated(true);
+            setUser(data.user);
+            console.log(data);
+          } else {
+            setAuthenticated(false);
+            localStorage.removeItem("coolelat_token");
+          }
+        });
+    } else {
+      localStorage.removeItem("coolelat_token");
+      setAuthenticated(false);
+      setUser({});
+    }
+
+    return () => abortController.abort();
+  }, [authenticated]);
 
   return (
     <AuthContext.Provider
@@ -19,7 +45,7 @@ export default function AuthProvider({ children }) {
         authenticated,
         setAuthenticated,
         user,
-        setUser
+        setUser,
       }}
     >
       {children}
