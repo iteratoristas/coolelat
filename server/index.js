@@ -66,7 +66,6 @@ pool.connect((error, client) => {
 
   });
 
-  // boilerplate
   app.get("/login", (req, res) => {
     const {email, password} = req.body;
 
@@ -75,12 +74,11 @@ pool.connect((error, client) => {
       if (result.rows.length === 0) return errorObject(res, 401, "No user found");
 
       const hashedPassword = result.rows[0]['password'];
-      console.log(typeof(password), typeof(hashedPassword));
       return bcrypt.compare(password.toString(), hashedPassword, (compareError, same) => {
         if (compareError || !same) return errorObject(res, 401, "No user found");
 
         // TODO: extract repetitive code in signup
-        const user = formatPayload(result.rows);
+        const user = formatPayload(result.rows[0]);
         return jwt.sign(user, process.env.SECRET_KEY, {expiresIn: '3h'}, (jwtError, token) => {
           if (jwtError) return errorObject(res);
           return res.status(200).json({success: true, token });
