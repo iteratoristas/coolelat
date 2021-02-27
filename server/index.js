@@ -71,11 +71,11 @@ pool.connect((error, client) => {
 
     return client.query('SELECT * FROM users WHERE email = $1', [email], (error, result) => {
       if (error) return errorObject(res);
-      if (result.rows.length === 0) return errorObject(res, 401, "No user found");
+      if (result.rows.length === 0) return errorObject(res, 401, "Incorrect credentials.");
 
       const hashedPassword = result.rows[0]['password'];
       return bcrypt.compare(password.toString(), hashedPassword, (compareError, same) => {
-        if (compareError || !same) return errorObject(res, 401, "No user found");
+        if (compareError || !same) return errorObject(res, 401, "Incorrect credentials.");
 
         // TODO: extract repetitive code in signup
         const user = formatPayload(result.rows[0]);
