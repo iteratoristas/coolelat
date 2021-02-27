@@ -28,6 +28,18 @@ pool.connect((error, client) => {
   }
 
   // Routes
+
+  app.post("/verify", (req, res) => {
+    const { token } = req.body;
+
+    try {
+      const user = jwt.verify(token, process.env.SECRET_KEY);
+      return res.status(200).json({ success: true, user });
+    } catch (error) {
+      return res.status(401).json({ success: false });
+    }
+  });
+
   app.post("/signup", (req, res) => {
     const { firstName, lastName, email, password, type } = req.body;
 
