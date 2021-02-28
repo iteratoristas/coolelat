@@ -72,7 +72,7 @@ export default function TeacherHome(props) {
                 .slice(0, 3)
                 .map((element, index) => {
                   return (
-                    <QuizCardTop key={index} quiz={element} text="Edit Quiz" path="edit" />
+                    <QuizCardTop key={index} quiz={element} text="Edit Quiz" path={`/edit/${element.quiz_id}`} />
                   );
                 })}
             </div>
