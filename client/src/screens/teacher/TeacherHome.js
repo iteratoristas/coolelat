@@ -5,9 +5,11 @@ import useFetch from "../../hooks/useFetch";
 import Flow from "../../components/Flow";
 import { useHistory } from "react-router-dom";
 import { navigate } from "../../helpers/navigate";
+import { useAuthContext } from "../../context/AuthProvider";
 
 export default function TeacherHome(props) {
   const { isPending: loading, error, data } = useFetch("teacher/quizzes");
+  const auth = useAuthContext();
   const history = useHistory();
 
   return (
@@ -18,7 +20,7 @@ export default function TeacherHome(props) {
       component={
         <>
           <div className="cat-title">
-            <h1>Hello, Teacher Nix!</h1>
+            <h1>Hello, Teacher {auth.user['first_name']}!</h1>
           </div>
           <div
             className="cat-title"
