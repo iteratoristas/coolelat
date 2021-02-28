@@ -23,7 +23,7 @@ function QuizCardTop({ quiz, text, path }) {
         <PrimaryButton
           text={text}
           onClick={(e) =>
-            navigate(history, { route: path ? path + '/' + pathname : pathname })
+            navigate(history, { route: path ? path : pathname })
           }
         />
       </center>
