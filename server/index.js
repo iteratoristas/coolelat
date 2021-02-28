@@ -145,6 +145,7 @@ pool.connect((error, client) => {
     );
   });
 
+  // WHERE PUBLISHED = TRUE
   app.get("/quizzes", (req, res) => {
     return client.query(
       "SELECT * FROM quizzes INNER JOIN subcategories USING(subcategory_id) INNER JOIN questions USING(quiz_id) LEFT JOIN question_options USING(question_id) LEFT JOIN formula_variables USING(question_id) ",
@@ -186,6 +187,25 @@ pool.connect((error, client) => {
         if (error) return errorObject(res);
   
         return res.status(200).json({success: true, quizzes: quizzes.rows});
+      })
+    })
+
+    app.post("/teacher/quiz", (req, res) => {
+      const bearer = req.headers.authorization;
+      const token = bearer?.slice('Bearer '.length); 
+  
+      if (!token) return errorObject(res, 403, "Insufficient permissions.");
+
+      const payload = jwt.decode(token);
+      const userId = payload.user_id;
+      const {subcategoryId, quizName} = req.body;
+
+      // ADD SSV
+      // check for same names?
+      return client.query('INSERT INTO quizzes (subcategory_id, quiz_name, author, published) VALUES ($1, $2, $3, false) RETURNING *', [subcategoryId, quizName, userId], (error, result) => {
+        console.log(error)
+        if (error) return errorObject(res);
+        return res.status(200).json({success: true, quiz: result.rows[0]});
       })
     })
   
