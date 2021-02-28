@@ -39,7 +39,7 @@ export default function CreateAQuiz(props) {
       .then((data) => {
         if (data.success) {
           const pathname = parsePath(data.quiz.quiz_name);
-          return navigate(history, pathname);
+          return navigate(history, pathname, {method: "REPLACE"});
         } else {
           // show Alert [see rct-bstrp]
         }
