@@ -4,8 +4,9 @@ import { navigate } from "../helpers/navigate";
 import { parsePath } from "../helpers/pathFunctions";
 import PrimaryButton from "./PrimaryButton";
 
-function QuizCardTop({ quiz, text }) {
+function QuizCardTop({ quiz, text, path }) {
   const history = useHistory();
+  const pathname = parsePath(quiz?.quiz_name);
 
   return (
     <div className="quizcard-square">
@@ -22,7 +23,7 @@ function QuizCardTop({ quiz, text }) {
         <PrimaryButton
           text={text}
           onClick={(e) =>
-            navigate(history, { route: parsePath(quiz?.quiz_name) })
+            navigate(history, { route: path ? path + '/' + pathname : pathname })
           }
         />
       </center>
