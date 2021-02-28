@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {validatePath} from '../helpers/pathFunctions';
-export default function Flow({ loading, error, component, props, categories, subcategories}) {
+export default function Flow({ loading, error, component, props, categories, subcategories, teacherQuizzes}) {
   if (error) {
     return <div>Error</div>;
   } else if (loading) {
     return <div>Loading</div>;
   } else {
-    if (validatePath(props, {categories, subcategories})) {
+    if (validatePath(props, {categories, subcategories, teacherQuizzes})) {
       return component;
     } else {
       return 'PUSH TO ERROR 404'
@@ -22,4 +22,5 @@ Flow.propTypes = {
   props: PropTypes.object,
   categories: PropTypes.array,
   subcategories: PropTypes.array,
+  teacherQuizzes: PropTypes.array,
 };
