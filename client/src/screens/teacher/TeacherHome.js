@@ -83,7 +83,7 @@ export default function TeacherHome(props) {
               }}
             >
               <p>No pending quizzes!</p>
-              <PrimaryButton text="Create a Quiz" onClick={() => navigate(history, '/create') }/>
+              <PrimaryButton text="Create a Quiz" onClick={() => navigate(history, {route: '/create'}) }/>
             </div>
           )}
         </>
