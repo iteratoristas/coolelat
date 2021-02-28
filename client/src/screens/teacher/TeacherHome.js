@@ -43,7 +43,7 @@ export default function TeacherHome(props) {
                 .slice(0, 3)
                 .map((element, index) => {
                   return (
-                    <QuizCardTop key={index} quiz={element} text="Edit Quiz"  />
+                    <QuizCardTop key={index} quiz={element} text="Edit Quiz" path="edit" />
                   );
                 })
             ) : (
@@ -72,7 +72,7 @@ export default function TeacherHome(props) {
                 .slice(0, 3)
                 .map((element, index) => {
                   return (
-                    <QuizCardTop key={index} quiz={element} text="Edit Quiz" />
+                    <QuizCardTop key={index} quiz={element} text="Edit Quiz" path="edit" />
                   );
                 })}
             </div>
