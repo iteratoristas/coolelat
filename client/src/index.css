@@ -345,12 +345,12 @@ code {
   width: 586px;
   height: 136px;
   left: 134px;
-  top: 328px;
+  top: 228px;
 
   font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 59px;
   line-height: 59px;
 
   color: #000000;
@@ -361,12 +361,12 @@ code {
   width: 448px;
   height: 104px;
   left: 134px;
-  top: 519px;
+  top: 419px;
 
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 34px;
   line-height: 35px;
 
   color: #000000;
@@ -378,7 +378,7 @@ code {
   width: 468px;
   height: 380px;
   left: 905px;
-  top: 225px;
+  top: 155px;
 
   background: url(./icons/Physics.png);
 }
@@ -388,7 +388,7 @@ code {
   width: 383px;
   height: 336px;
   left: 1006px;
-  top: 446px;
+  top: 376px;
 
   background: url(./icons/Calculator.png);
 }
@@ -398,10 +398,12 @@ code {
   width: 412px;
   height: 439px;
   left: 786px;
-  top: 422px;
+  top: 352px;
 
   background: url(./icons/Globus.png);
 }
+
+
 
 .home-button {
   display: flex;
@@ -413,7 +415,7 @@ code {
   width: 175px;
   height: 10px;
   left: 134px;
-  top: 673px;
+  top: 573px;
 
   background: #006DB7;
   border-radius: 50px;
