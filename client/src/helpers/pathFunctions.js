@@ -2,7 +2,7 @@ export const parsePath = (path) => path.trim().split(' ').map(fragment => fragme
 
 export const unparsePath = (path) => path.trim().length > 0 ? path.trim().split('-').map(fragment => fragment[0].toUpperCase() + fragment.substring(1)).join(' ') : '';  
 
-export function validatePath(props, {categories, subcategories}) {
+export function validatePath(props, {categories, subcategories, teacherQuizzes}) {
     if (!props.match.params) return true;
 
     const params = props.match.params;
@@ -21,6 +21,9 @@ export function validatePath(props, {categories, subcategories}) {
 
                 quizzes = quizzes[0].quizzes.map(quiz => quiz.quiz_name.toLowerCase());
                 return quizzes.includes(unparsePath(params[value]).toLowerCase())
+            case 'quizId':
+                let teacher = teacherQuizzes?.filter(value => value.quiz_id.toString() === params['quizId']);  
+                return teacher.length !== 0;
             default:
                 return false;
         }

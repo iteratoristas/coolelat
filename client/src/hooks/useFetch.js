@@ -10,7 +10,7 @@ const useFetch = (endpoint) => {
     const abortController = new AbortController();
 
     /** this 'binds' the fetch to the abort controller */
-    fetch(`http://localhost:5000/${endpoint}`, { signal: abortController.signal })
+    fetch(`http://localhost:5000/${endpoint}`, { signal: abortController.signal, headers: {"Authorization": "Bearer " + localStorage.getItem('coolelat_token')} })
       .then((res) => {
         if (!res.ok) throw Error("Could not connect to get requested resource");
         return res.json();
