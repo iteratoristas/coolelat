@@ -4,13 +4,11 @@ import QuizCardTop from "../../components/QuizCardTop";
 import useFetch from "../../hooks/useFetch";
 import Flow from "../../components/Flow";
 import { useHistory } from "react-router-dom";
+import { navigate } from "../../helpers/navigate";
 
 export default function TeacherHome(props) {
   const { isPending: loading, error, data } = useFetch("teacher/quizzes");
   const history = useHistory();
-
-  // TODO: EXTRACT AND REFACTOR
-  const push = (route) => history.push(route);
 
   return (
     <Flow
@@ -85,7 +83,7 @@ export default function TeacherHome(props) {
               }}
             >
               <p>No pending quizzes!</p>
-              <PrimaryButton text="Create a Quiz" onClick={() => push('/create') }/>
+              <PrimaryButton text="Create a Quiz" onClick={() => navigate(history, '/create') }/>
             </div>
           )}
         </>
