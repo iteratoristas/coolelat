@@ -1,4 +1,4 @@
-export const navigate = (history, route, { method } = { method: "PUSH" }) => {
+export const navigate = (history, { method,  route } = { method: "PUSH", route: "" }) => {
   if (method.trim().toUpperCase() === "PUSH") {
     return history?.push(route);
   } else if (method.trim().toUpperCase() === "REPLACE") {
