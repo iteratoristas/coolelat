@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import Flow from "../../components/Flow";
 import PrimaryButton from "../../components/PrimaryButton";
 import { useAuthContext } from "../../context/AuthProvider";
 import { useData } from "../../context/DataProvider";
+import { navigate } from "../../helpers/navigate";
+import { parsePath } from "../../helpers/pathFunctions";
 
 export default function CreateAQuiz(props) {
   const auth = useAuthContext();
+  const history = useHistory();
   const { subcategories, loading, error } = useData();
   const [quizName, setQuizName] = useState("");
   const [subcategoryId, setSubcategoryId] = useState(1);
@@ -34,14 +38,12 @@ export default function CreateAQuiz(props) {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          // go to / [auiz.quiz-name] <- parsePath
-          console.log(data);
+          const pathname = parsePath(data.quiz.quiz_name);
+          return navigate(history, pathname);
         } else {
           // show Alert [see rct-bstrp]
         }
       });
-
-    console.log(quizName, subcategoryId);
   };
   return (
     <Flow
