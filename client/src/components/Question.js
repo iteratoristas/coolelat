@@ -46,9 +46,10 @@ export default function Question(props) {
         </div>
       </div>
       {showRemark && (
-        <div>
-          {selectedAnswer === answer ? <p>Congratulations!</p> : <p>Uh-oh, you got the wrong answer :(</p>}
-          {explanation ? explanation : <p>The correct answer is {letterEquivalent()} or "{answer}"</p>}
+        <div className = "remark">
+          You answered "{selectedAnswer}"
+          {/*{selectedAnswer === answer ? <p>Congratulations!</p> : <p>Uh-oh, you got the wrong answer :(</p>}
+          explanation ? explanation : <p>The correct answer is {letterEquivalent()} or "{answer}"</p>} */}
         </div>
           )} 
     </div>
