@@ -21,3 +21,8 @@ export function formatQuestionAndAnswer(question) {
 
     return {answer: testAnswer, string: testString};
 }
+
+export function getVariables(question = "[length] x [width]") {
+  const regex = new RegExp(/(\[[a-z]+\])+/gi);
+  return question.match(regex)?.filter?.((item, index, array) => array.indexOf(item) === index);
+}
